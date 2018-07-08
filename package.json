@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/jeffreyleeon/zb-promise-cache/issues"
   },
-  "homepage": "https://github.com/jeffreyleeon/zb-promise-cache#readme"
+  "homepage": "https://github.com/jeffreyleeon/zb-promise-cache#readme",
+  "dependencies": {
+    "lru-cache": "^4.1.3"
+  }
 }
