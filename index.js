@@ -10,8 +10,17 @@ class PromiseCache {
    *                            based on a set of given param(s).
    * @param {JSON} options - Configurations.
    */
-  constructor(promise, options) {
+  constructor(promise, options = {}) {
     this._promise = promise;
+
+    let lruOptions = {};
+    if (options.max !== undefined) {
+      lruOptions.max = parseInt(options.max);
+    }
+    if (options.maxAge !== undefined) {
+      lruOptions.maxAge = parseInt(options.maxAge);
+    }
+    this._internalCache = LRU(lruOptions);
     this._options = options || {};
   }
 }
