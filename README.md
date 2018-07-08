@@ -89,3 +89,36 @@ p.get('testing')
   });
 
 ```
+
+# Functions
+```
+/**
+ * Get the cached value with cacheKey.
+ * If cacheKey does not have value in lru cache,
+ * promise will be called with params distributed to the promise called.
+ * Value resolved from promise will be stored in lru cache with cacheKey
+ * provided and resolved in this function at the same time.
+ * @param {Promise} cacheKey -cacheKey that is going to be get the value.
+ * @param {array} params - An array of params that will fit into the promise
+ *                         in order to retrieve value to be cached when
+ *                         there is a cache miss.
+ */
+get(cacheKey, params)
+
+
+
+/**
+ * Manually set a value into cacheKey.
+ * @param {string} cacheKey - cacheKey that is going to be set with value.
+ * @param {any} value - value to be set into cacheKey, default ''.
+ */
+set(cacheKey, value)
+
+
+
+/**
+ * Clear all caches.
+ */
+clear()
+
+```
