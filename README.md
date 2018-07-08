@@ -57,3 +57,35 @@ p.get('advanced testing', [1])
   });
 
 ```
+
+# Options
+
+```
+
+const PromiseCache = require('zb-promise-cache');
+
+
+const simplePromise = function() {
+  return new Promise((resolve, reject) => {
+    resolve('hello world');
+  });
+}
+
+const options = {
+  'max': 200 // Max lru cache size, default INVINITY
+  'maxAge': 100000 // Max cache life time in ms, default, INVINITY
+  'debug': true // Display debug msg in console
+};
+
+const promiseCache = new PromiseCache(simplePromise, options);
+
+p.get('testing')
+  .then(function(val) {
+    console.log(val); // 'hello world'
+
+	// Stored in lru cache with max cache size of 200
+    // cache life time 100000ms
+    // and showing debug logs in console
+  });
+
+```
