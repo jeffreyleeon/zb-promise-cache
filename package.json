@@ -4,7 +4,7 @@
   "description": "A cache object that can cache result of a promise for certain period of time",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test.js"
   },
   "repository": {
     "type": "git",
