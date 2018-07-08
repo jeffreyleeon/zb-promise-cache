@@ -1,0 +1,22 @@
+{
+  "name": "zb-promise-cache",
+  "version": "1.0.0",
+  "description": "A cache object that can cache result of a promise for certain period of time",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeffreyleeon/zb-promise-cache.git"
+  },
+  "keywords": [
+    "cache"
+  ],
+  "author": "Jeffrey LEE",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jeffreyleeon/zb-promise-cache/issues"
+  },
+  "homepage": "https://github.com/jeffreyleeon/zb-promise-cache#readme"
+}
