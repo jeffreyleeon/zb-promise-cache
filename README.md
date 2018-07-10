@@ -1,9 +1,6 @@
 # zb-promise-cache
 A cache object that can cache result of a promise for certain period of time
 
-# zb-promise-cache
-A cache object that can cache result of a promise for certain period of time
-
 # Simple usage
 
 ```
@@ -51,9 +48,35 @@ p.get('advanced testing', [1])
     console.log(val); // 'hello world 1'
 
     // At this point 'hello world 1' is already cached
-    // into 'promiseCache' object. Next time you call
+    // into 'promiseCache' object with key 'advanced testing'. Next time you call
     // p.get('advanced testing', '2'), the value will be retrieved from cache
     // and will resolve 'hello world 1' in stead of 'hello world 2' unless cache expired.
+  });
+
+```
+
+```
+
+const PromiseCache = require('zb-promise-cache');
+
+
+const advancedPromise = function(someValue, anotherValue) {
+  return new Promise((resolve, reject) => {
+    const sum = someValue + anotherValue;
+    resolve('hello world ' + sum);
+  });
+}
+
+const promiseCache = new PromiseCache(advancedPromise);
+
+p.get('advanced testing', [2, 3])
+  .then(function(val) {
+    console.log(val); // 'hello world 5'
+
+    // At this point 'hello world 5' is already cached
+    // into 'promiseCache' object with key 'advanced testing'. Next time you call
+    // p.get('advanced testing', [1111, 2222]), the value will be retrieved from cache
+    // and will resolve 'hello world 5' in stead of 'hello world 3333' unless cache expired.
   });
 
 ```
